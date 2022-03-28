@@ -1,12 +1,14 @@
-interface Answer {
+export interface Answer {
   text: string;
   correct?: boolean;
 }
-interface Question {
+
+export interface Question {
   text: string;
   answers: Answer[];
 }
-interface Catagory {
+
+export interface Catagory {
   name: string;
   questions: Question[];
 }
