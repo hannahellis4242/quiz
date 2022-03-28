@@ -1,0 +1,68 @@
+{
+    "catagories": [
+        {
+            "name": "Sports",
+            "questions": [
+                {
+                    "text": "In Australian football, what is the maximum number of players allowed on the field at a time?",
+                    "answers": [
+                        {
+                            "text": "40"
+                        },
+                        {
+                            "text": "36",
+                            "correct": true
+                        },
+                        {
+                            "text": "14"
+                        },
+                        {
+                            "text": "28"
+                        }
+                    ]
+                },
+                {
+                    "text": "Where in the world can you find arnis being widely practiced?",
+                    "answers": [
+                        {
+                            "text": "China"
+                        },
+                        {
+                            "text": "The Philippines",
+                            "correct": true
+                        },
+                        {
+                            "text": "India"
+                        },
+                        {
+                            "text": "Suriname"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Technology",
+            "questions": [
+                {
+                    "text": "Which dominant technology company was founded by two young men who got their start stringing rubber hoses across roadways?",
+                    "answers": [
+                        {
+                            "text": "IBM"
+                        },
+                        {
+                            "text": "CompUSA"
+                        },
+                        {
+                            "text": "Gateway 2000"
+                        },
+                        {
+                            "text": "Microsoft",
+                            "correct": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

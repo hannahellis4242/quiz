@@ -16,10 +16,12 @@ const validate = async (instance: string): Promise<string> => {
 };
 
 const openQuiz = async (p: PathOrFileDescriptor): Promise<Quiz> => {
-  return promisify(readFile)(p)
-    .then((x) => x.toString())
-    .then(validate)
-    .then((x) => JSON.parse(x));
+  return (
+    promisify(readFile)(p)
+      .then((x) => x.toString())
+      //.then(validate)
+      .then((x) => JSON.parse(x))
+  );
 };
 
 export default openQuiz;

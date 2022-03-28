@@ -1,5 +1,6 @@
 import { Command } from "commander";
 import openQuiz from "./Quiz/openQuiz";
+import pickCatagory from "./Quiz/pickCatagory";
 
 const program = new Command("quiz")
   .description("small command line quiz tool")
@@ -7,7 +8,10 @@ const program = new Command("quiz")
   .argument("<input>", "Input file for quiz questions")
   .action((input) => {
     openQuiz(input)
-      .then((quiz) => console.log(quiz))
+      .then((quiz) => {
+        console.log("Welcome to Quiz!");
+        return pickCatagory(quiz);
+      })
       .catch((reason) => console.error(reason));
   });
 
