@@ -21,6 +21,7 @@
     "chalk": "^5.0.1",
     "commander": "^9.1.0",
     "inquirer": "^8.2.2",
-    "jsonschema": "^1.4.0"
+    "jsonschema": "^1.4.0",
+    "pandemonium": "^2.3.0"
   }
 }
