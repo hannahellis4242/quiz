@@ -26,7 +26,6 @@ const pickCatagory = async (quiz: Quiz): Promise<Catagory> => {
       },
     ])
     .then((answers) => {
-      console.info("selected catagory:", answers.catagory);
       return getCatagory(quiz.catagories, answers.catagory);
     });
 };

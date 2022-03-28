@@ -12,13 +12,16 @@ class Result {
     public numberOfQuestionsAsked: number
   ) {}
   percentage(): number {
+    if (this.numberOfQuestionsAsked === 0) {
+      return 0;
+    }
     return (this.numberOfCorrectAnswers * 100) / this.numberOfQuestionsAsked;
   }
 }
 
 export default class Score {
   constructor(
-    public catagory: Catagory,
+    public catagoryName: string,
     public start: Date,
     public end: Date,
     public givenAnswers: Response[]
@@ -39,7 +42,7 @@ export default class Score {
     const timeTaken = Math.floor(
       (this.end.getTime() - this.start.getTime()) / 1000
     );
-    return `Catagory : ${this.catagory.name}\n${
+    return `Catagory : ${this.catagoryName}\n${
       result.numberOfQuestionsAsked
     } questions completed in ${timeTaken} seconds\nNumber correct : ${
       result.numberOfCorrectAnswers

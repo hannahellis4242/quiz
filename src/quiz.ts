@@ -2,6 +2,8 @@ import { Command } from "commander";
 import openQuiz from "./Quiz/openQuiz";
 import pickCatagory from "./Quiz/pickCatagory";
 import pickQuestions from "./Quiz/pickQuestions";
+import runQuiz from "./Quiz/runQuiz";
+import Score from "./Quiz/Score";
 
 const program = new Command("quiz")
   .description("small command line quiz tool")
@@ -14,7 +16,8 @@ const program = new Command("quiz")
         return pickCatagory(quiz);
       })
       .then((catagory) => pickQuestions(catagory))
-      .then((quizToRun) => console.log(JSON.stringify(quizToRun)))
+      .then((quizToRun) => runQuiz(quizToRun.name, quizToRun.questions))
+      .then((score) => console.log(score.show()))
       .catch((reason) => console.error(reason));
   });
 
