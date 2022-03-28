@@ -1,9 +1,17 @@
+import askQuestion from "./askQuestion";
 import { Question } from "./Quiz";
-import Score, { Response } from "./Score";
+import Score, { QuizResponse } from "./Score";
 
-const runQuiz = (catagoryName: string, questions: Question[]): Score => {
+const runQuiz = async (
+  catagoryName: string,
+  questions: Question[]
+): Promise<Score> => {
   const start = new Date();
-  const responses: Response[] = []; //TODO figure out how to populate this
+  const responses = questions.reduce<QuizResponse[]>(async (acc, x) => {
+    const res = await askQuestion(x);
+    acc.push(res);
+    return acc;
+  }, []);
   const stop = new Date();
   return new Score(catagoryName, start, stop, responses);
 };

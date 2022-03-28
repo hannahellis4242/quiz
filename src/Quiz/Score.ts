@@ -1,5 +1,6 @@
 import { Catagory, Question, Answer } from "./Quiz";
-export class Response {
+
+export class QuizResponse {
   correct: boolean;
   constructor(public question: Question, public selected: Answer) {
     this.correct = selected.correct ? selected.correct : false;
@@ -24,7 +25,7 @@ export default class Score {
     public catagoryName: string,
     public start: Date,
     public end: Date,
-    public givenAnswers: Response[]
+    public givenAnswers: QuizResponse[]
   ) {}
   show(): string {
     const result = this.givenAnswers.reduce<Result>((result, response) => {
